@@ -1,0 +1,14 @@
+// create dockerignore file
+// named will be   .dockerignore
+
+
+// here we dont want to include, node_modules file ,Dockerfile,.git,.gitignore etc into  the docker container
+// so make dockerignore file and write the below lines
+------------------------------------ .dockerignore --------------------------------------
+
+node_modules
+Dockerfile
+.dockerignore
+.git
+.gitignore
+

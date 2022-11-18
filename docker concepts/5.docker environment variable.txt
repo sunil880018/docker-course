@@ -1,0 +1,39 @@
+------------------------------ Dockerfile --------------------------------------
+
+
+FROM node:16-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . ./
+ENV PORT 3000
+EXPOSE $PORT
+CMD ["npm","run","dev"]
+
+
+-----------------------------------------------------------------------------------
+
+// localhost:3000, run on 3000 port but container run on 4000 port
+1. docker run --env PORT=4000 -p 3000:3000 -d --name <container_name> my-app-image
+
+
+
+-------------------------------- using .env file --------------------------------------
+
+
+# run using .env which has PORT = 4000
+2. docker run -v %cd%:/app:ro -v /app/node_modules --env-file ./.env  -p 3000:3000 -d --name <container_name> <image_name>
+
+
+
+
+# If you using docker build again and again there will be lots of volumes , So remove unneccessary volumes
+3. docker volume prune
+
+
+# see all the volumes
+4. docker volume ls
+
+
+# remove docker container and volume both
+5. docke rm <container_name> -fv

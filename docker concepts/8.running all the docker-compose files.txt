@@ -1,0 +1,23 @@
+
+
+There are three docker-compose file
+1. for backup--->  docker-compose.backup.yml
+2. for development or staging  -----> docker-compose.dev.yml
+3. for production ------>  docker-compose.prod.yml
+
+
+
+
+# running all the docker-compose files simultaneously
+1. docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+
+
+# deleting all the docker-compose files simultaneously
+2. docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v
+
+
+# rebuilding all the docker-compose files simultaneously
+# suppose you have changed the projects file , so need to rebuild the image and container
+3. docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build
+
+

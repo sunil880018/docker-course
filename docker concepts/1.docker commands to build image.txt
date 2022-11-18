@@ -1,0 +1,47 @@
+
+# create docker image
+1. docker build -t <image_name> <folder_path>  // in which dockerfile present
+ // Example: docker build -t my-app-image  .  // dot represent current directory
+
+
+# remove docker image
+2. docker image rm <image_id>
+
+# remove container forcefully
+3. docker rm <container_name> -f
+
+
+# list of all the images
+4. docker image ls
+
+
+# create docker image with the image_name given
+5. docker build -t my-app-image  .
+
+
+# run docker image or run container
+6 . docker run -p <localhost port>:<container port> -d --name <container_name> <image_name>
+Example: docker run -p 3000:3000 -d --name <container_name> my-app-image // you can give container_name also
+
+<localhost port>:<container port> // from the global traffic comming on the your host machine, and host machine 
+                                  // redirects to container port 
+
+// -p means port
+// -d means detach mode , your container run untill you have kill forcefully
+
+
+
+# see running container
+7. docker ps
+
+
+0.0.0.0:3000->3000/tcp    ---> first port is your localhost machine port and second one is docker running port
+
+
+
+# see all the folder and files of container which have
+8.docker exec -it <container_name>  bash
+
+// output: /app 
+//because  /app , you have set the workdir in dockerfile
+// type <ls> command , you see all the folder and files of project

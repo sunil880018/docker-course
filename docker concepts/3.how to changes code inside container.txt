@@ -1,0 +1,28 @@
+changes something in project will reflect in docker container simultaneously
+
+------------command -----------------
+
+1.docker run -v <path_to_current_project_working_folder_location>:<path_to_docker_container_folder_location> -p 3000:3000 -d --name <container_name> <image_name>
+
+Example : docker run -v %cd%:/app  -p 3000:3000 -d --name <container_name> <image_name> // if you are using window command line use %cd%
+Example : docker run -v ${pwd}:/app  -p 3000:3000 -d --name <container_name> <image_name> // if you are using window power shell use ${pwd}
+Example : docker run -v $(pwd):/app  -p 3000:3000 -d --name <container_name> <image_name> // if you are using mac or linux use $(pwd)
+
+
+// -v means volume
+
+
+// now you can change your index.js file , will also changes happen in docker container simultaneously
+// but make sure you installed nodemon
+
+
+change dockerfile CMD
+
+CMD ["npm","run","dev"]
+
+
+
+// package.json
+
+scripts
+"dev": "nodemon index.js"

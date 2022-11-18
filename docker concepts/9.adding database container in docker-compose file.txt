@@ -1,0 +1,35 @@
+ -------------------------- creating another container ----------------------------
+ 
+ # in docker-compose.yml file
+ mongo:  # using mongo db container
+  image: mongo
+  environment:
+   - MONGO_INITDB_ROOT_USERNAME=sunil
+   - MONGO_INITDB_ROOT_PASSWORD=mypassword
+
+
+
+# you can goes inside the mongo container
+1. docker exec -it <mongo_container_name> bash
+
+# inside mongo container
+  // mongo -u "username" -p "password"
+
+
+# see container details
+2. docker inspect <container_name>
+
+
+# see container logs
+3. docker logs <container_name>
+
+
+# if you want to bind ip address of image then use service which has image
+# Example here mongo
+
+connect('---------------------- here instead of localhost use mongo)
+
+
+# services is uses ip address of image
+
+

@@ -1,0 +1,21 @@
+# create image and create containers also
+1. docker-compose up -d
+
+# see images
+2. docker  image ls
+
+// you see something like this, <project_folder>_<container_name>
+
+
+# see containers
+3. docker ps
+
+
+
+# deleting containers with the volume, same as docker rm <container_name>, careful only deleting containers not the images
+4. docker-compose down -v
+
+
+
+# rebuild image and create containers also
+5.docker-compose up -d --build
