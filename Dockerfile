@@ -10,17 +10,17 @@ WORKDIR /app
 
 
 # this is equal to COPY package.json /app
-# package.json contains all the libraries or dependencies which you have used in the project
+# package.json contains all the libraries name or dependencies name which you have used in the project
 COPY package.json  .   
 
 
 
-# install all the dependencies contains in package.json file,this is build time
+# install all the dependencies contains in package.json file , this is build time
 # RUN npm install --only=production  # for the production
 RUN npm install        
 
 
-# copy all the folders and files of the application into the docker image or docker container
+# copy all the folders and files of the application into the docker image or docker container 
 COPY . ./             
 
 
