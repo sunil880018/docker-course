@@ -17,7 +17,7 @@ services:      # can have multiple container
    - mongo
 
 
- mongo:  # using mongo db container, this already made image so no need to biuid, port 
+ mongo:  # using mongo db container, this already made image so no need to build, port 
   image: mongo
   environment:
    - MONGO_INITDB_ROOT_USERNAME=sunil
